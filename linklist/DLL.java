@@ -67,8 +67,9 @@ public class DLL {
         }
         node.next = temp.next;
         node.prev = temp;
-        temp.next.prev = node;
         temp.next = node;
+        node.next.prev = node;
+
         size++;
 
     }
@@ -168,5 +169,21 @@ public class DLL {
                 current = current.next;
             }
             System.out.println("Data "+oldData+" not found");
+        }
+
+        public void sort(){
+            if(head == null){
+                System.out.println("List is empty");
+                return;
+            }
+            for(Node i = head; i!=null; i=i.next){
+                for(Node j = i.next; j!=null; j=j.next){
+                    if(i.data > j.data){
+                        int temp = i.data;
+                        i.data = j.data;
+                        j.data = temp;
+                    }
+                }
+            }
         }
 }
