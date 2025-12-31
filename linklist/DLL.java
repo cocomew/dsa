@@ -147,4 +147,26 @@ public class DLL {
             System.out.println("null");
             return;
         }
+
+        public int  search(int data){
+            Node current = head;
+            int index =0;
+            while(current != null){
+                if(current.data == data)return index;
+                current = current.next;
+                index++;
+            }
+            return -1;
+        }
+        public void update(int oldData, int newData){
+            Node current = head;
+            while(current != null){
+                if(current.data == oldData){
+                    current.data = newData;
+                    return;
+                }
+                current = current.next;
+            }
+            System.out.println("Data "+oldData+" not found");
+        }
 }

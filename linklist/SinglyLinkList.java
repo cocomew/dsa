@@ -47,13 +47,15 @@ public class SinglyLinkList {
             System.out.println("Index out of bounds");
             return;
         }
-        if(index == size){
-            addAtlast(data);
-        }
         if(index ==0){
             addFirst(data);
             return;
         }
+        if(index == size){
+            addAtlast(data);
+            return;
+        }
+
         Node node = new Node(data);
         Node current = head;
         for(int i =0;i<index-1;i++){
@@ -154,6 +156,17 @@ public class SinglyLinkList {
             System.out.print(i + " -> ");
         }
         System.out.println("null");
+    }
+
+    public void update(int oldValue, int newValue){
+        Node current = head;
+        while(current != null){
+            if(current.data == oldValue){
+                current.data = newValue;
+                return;
+            }
+            current = current.next;
+        }
     }
 
 }
