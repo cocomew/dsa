@@ -10,16 +10,18 @@ import java.util.Scanner;
 public class Root {
 
     public static void main(String[] args) {
-        DLL2 s = new DLL2();
-        s.add(10);
-
-        s.add(20);
-        s.add(30,1);
-        s.add(40,0);
-        s.add(50,4);
-        s.addB(6);
-        s.addL(70);
-        s.display();
+        SinglyLinkList list = new SinglyLinkList();
+        list.add(10);
+        list.add(20);
+        list.add(30,1);
+        list.addFirst(5);
+        list.add(-10);
+list.addAtlast(100);
+list.add(400);
+list.add(399);
+list.display();
+list.buubSort();
+list.display();
 
 
 

@@ -1,4 +1,7 @@
 package dsa.linklist;
+
+import java.util.List;
+
 //0 based singlylinked list implementation
 public class SinglyLinkList {
     private Node head;
@@ -110,6 +113,47 @@ public class SinglyLinkList {
         }
         return -1;
     }
-    public void display() { Node temp = head; while (temp != null) { System.out.print(temp.data + " -> "); temp = temp.next; } System.out.println("null"); }
+    public void display() { System.out.print("LinkList: ");;Node temp = head; while (temp != null) { System.out.print(temp.data + " -> "); temp = temp.next; } System.out.println("null"); }
+
+    public List<Integer> toList() {
+        List<Integer> list = new java.util.ArrayList<>();
+        Node current = head;
+        while (current != null) {
+            list.add(current.data);
+            current = current.next;
+        }
+        return list;
+    }
+
+    public void buubSort(){
+        int [] arr = new int[size];
+        Node current = head;
+        for(int i =0;i<size;i++){
+            arr[i] = current.data;
+            current = current.next;
+        }
+
+
+        int n = arr.length;
+        for(int i = 0;i<n-1;i++){
+            boolean swap = false;
+            for(int j = 0 ;j<n-i-1;j++){
+                if(arr[j]> arr[j+1]){
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                    swap = true;
+                }
+            }
+            if(!swap){
+                break;
+            }
+        }
+        System.out.print("BubbleSort: ");
+        for(int i: arr){
+            System.out.print(i + " -> ");
+        }
+        System.out.println("null");
+    }
 
 }
